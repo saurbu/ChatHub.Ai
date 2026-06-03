@@ -155,8 +155,10 @@ function Chat() {
     setLoading(true);
 
     try {
+      const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;;
+
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDIfzcjvznvo5qTe3qyC9jcCtzevgEwY8k`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
